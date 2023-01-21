@@ -5,10 +5,10 @@ import { useCardInfo } from 'hooks/queries/useCardInfo';
 export const CardList = () => {
   const querryCard = useCardInfo();
   const querryCardInfo = querryCard.data;
-  console.log(querryCardInfo);
+  console.log(querryCardInfo && querryCardInfo[0].title);
 
   return (
-    <Grid container>
+    <Grid container spacing={4}>
       {querryCardInfo?.map((item: any) => (
         <CardItem
           key={item.id}

@@ -12,25 +12,30 @@ interface CardItemProps {
 export const CardItem: React.FC<CardItemProps> = ({ title, imgSource, description }) => {
   return (
     <Grid item xs="12" md="4">
-      <Card sx={{ width: 400 }}>
+      <Card sx={{ width: 400, height: 530, boxShadow: '0px 8px 24px rgba(0, 0, 0, 0.05)' }}>
         <CardMedia sx={{ height: 217 }} image={imgSource} title="green iguana" component="img" />
 
-        <CardContent>
-          <Box>
-            <CalendarTodayOutlinedIcon />
-            <Box>June 29th, 2021</Box>
+        <CardContent sx={{ p: '25px' }}>
+          <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+            <CalendarTodayOutlinedIcon sx={{ width: '13.33px', color: '#363636' }} />
+            <Box sx={{ fontWeight: '400', fontSize: '14px', color: '#363636', ml: '9.33px' }}>
+              June 29th, 2021
+            </Box>
           </Box>
-          <Typography gutterBottom variant="h5" component="div">
+          <Typography gutterBottom variant="h5" component="div" sx={{ fontSize: '24px' }}>
             {title}
           </Typography>
-          <Typography variant="body2" color="text.secondary">
-            {description}
+          <Typography variant="body2" color="text.secondary" sx={{ fontSize: '16px' }}>
+            {description.length <= 100 ? description : description.substr(0, 100) + '...'}
           </Typography>
+          <CardActions>
+            <Button
+              size="small"
+              sx={{ fontWeight: '700px', color: '#363636', textTransform: 'none' }}>
+              Read more
+            </Button>
+          </CardActions>
         </CardContent>
-        <CardActions>
-          <Button size="small">Share</Button>
-          <Button size="small">Learn More</Button>
-        </CardActions>
       </Card>
     </Grid>
   );

@@ -6,13 +6,16 @@ import { StyledSearchedField } from './StyledSearchField';
 export const SearchField = () => {
   return (
     <StyledSearchedField
+      onChange={(e: any) => {
+        console.log(e.target.value);
+      }}
       fullWidth
       id="seacrh"
       variant="standard"
       // label="Filter by keywords"
       label={<CustomTypograthy> Filter by keywords</CustomTypograthy>}
       // defaultValue={<CustomTypograthy>The most successful IT companies in 2020</CustomTypograthy>}
-      defaultValue="The most successful IT companies in 2020"
+      // defaultValue="The most successful IT companies in 2020"
       InputProps={{
         startAdornment: (
           <IconButton>

@@ -13,8 +13,9 @@ export const HomePage = () => {
           sx={{
             display: 'flex',
             flexDirection: 'column',
+            justifyContent: 'left',
             mt: '65px',
-            justifyContent: 'left'
+            mb: '45px'
           }}>
           <Box component={'span'} sx={{ color: '#363636' }}>
             Results: 6
