@@ -1,6 +1,7 @@
 import { StyledContainer } from 'components/common/Container/StyledContainer';
 import { SearchField } from 'components/SearchField/SearchField';
 import { Divider, Box } from '@mui/material';
+import { CardList } from 'components/CardList';
 
 export const HomePage = () => {
   return (
@@ -20,6 +21,7 @@ export const HomePage = () => {
           </Box>
           <Divider orientation="horizontal" />
         </Box>
+        <CardList />
       </StyledContainer>
     </>
   );
