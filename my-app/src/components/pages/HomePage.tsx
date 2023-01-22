@@ -2,8 +2,11 @@ import { StyledContainer } from 'components/common/Container/StyledContainer';
 import { SearchField } from 'components/SearchField/SearchField';
 import { Divider, Box } from '@mui/material';
 import { CardList } from 'components/CardList';
+import { useAppSelector } from 'app/hooks';
 
 export const HomePage = () => {
+  const { cards } = useAppSelector((state) => state.cards);
+  console.log(cards && cards.length);
   return (
     <>
       <StyledContainer>
@@ -18,7 +21,7 @@ export const HomePage = () => {
             mb: '45px'
           }}>
           <Box component={'span'} sx={{ color: '#363636' }}>
-            Results: 6
+            Results: {cards && cards.length}
           </Box>
           <Divider orientation="horizontal" />
         </Box>

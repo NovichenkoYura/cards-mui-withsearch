@@ -2,15 +2,18 @@ import { Button, Card, CardActions, CardContent, CardMedia, Grid, Typography } f
 import { Box } from '@mui/system';
 import CalendarTodayOutlinedIcon from '@mui/icons-material/CalendarTodayOutlined';
 import { useCardInfo } from 'hooks/queries/useCardInfo';
+import { NavLink } from 'react-router-dom';
 
 interface CardItemProps {
   title: string;
   imgSource: string;
   description: string;
+  id: string;
 }
 
-export const CardItem: React.FC<CardItemProps> = ({ title, imgSource, description }) => {
+export const CardItem: React.FC<CardItemProps> = ({ title, imgSource, description, id }) => {
   return (
+    // <NavLink to={locations.main.path}>
     <Grid item xs="12" md="4">
       <Card sx={{ width: 400, height: 530, boxShadow: '0px 8px 24px rgba(0, 0, 0, 0.05)' }}>
         <CardMedia sx={{ height: 217 }} image={imgSource} title="green iguana" component="img" />
@@ -38,6 +41,7 @@ export const CardItem: React.FC<CardItemProps> = ({ title, imgSource, descriptio
         </CardContent>
       </Card>
     </Grid>
+    // </NavLink>
   );
 };
 

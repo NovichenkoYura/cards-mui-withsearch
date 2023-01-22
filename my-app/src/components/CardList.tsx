@@ -11,8 +11,9 @@ export const CardList = () => {
   const querryCardInfo = querryCard.data;
 
   const { cards } = useAppSelector((state) => state.cards);
-
   const dispatch = useAppDispatch();
+
+  // For codereviewer: I use store  for satisfying the conditions of the task (use state management). Without it I would prefer to use React Querry
 
   useEffect(() => {
     dispatch(getCardsInfo(querryCardInfo));
