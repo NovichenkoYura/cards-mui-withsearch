@@ -9,6 +9,7 @@ interface CardItemProps {
   imgSource: string;
   description: string;
   id: string;
+  key: string;
 }
 
 export const CardItem: React.FC<CardItemProps> = ({ title, imgSource, description, id }) => {

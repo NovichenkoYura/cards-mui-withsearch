@@ -9,6 +9,7 @@ import { getCardsInfo } from 'store/cardsSlice';
 export const CardList = () => {
   const querryCard = useCardInfo();
   const querryCardInfo = querryCard.data;
+  console.log(querryCardInfo);
 
   const { cards } = useAppSelector((state) => state.cards);
   const dispatch = useAppDispatch();
