@@ -6,7 +6,6 @@ import { useAppSelector } from 'app/hooks';
 
 export const HomePage = () => {
   const { cards } = useAppSelector((state) => state.cards);
-  console.log(cards && cards.length);
   return (
     <>
       <StyledContainer>

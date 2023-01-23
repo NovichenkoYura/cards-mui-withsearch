@@ -10,8 +10,8 @@ export const Layout = () => {
   return (
     <>
       <header></header>
-      {/* <HomePage /> */}
-      <ArticlePage />
+      <HomePage />
+      {/* <ArticlePage /> */}
 
       <main className="container">
         <Outlet />

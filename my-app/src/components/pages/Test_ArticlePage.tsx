@@ -2,14 +2,8 @@ import { Box, Button, Card, CardActions, CardContent, CardMedia, Typography } fr
 import { StyledContainer } from 'components/common/Container/StyledContainer';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import { useAppSelector } from 'app/hooks';
-import { useParams } from 'react-router-dom';
 
 export const ArticlePage = () => {
-  const { cards } = useAppSelector((state) => state.cards);
-  const { id } = useParams();
-  // console.log(useParams());
-
   return (
     <>
       <StyledContainer>
@@ -22,7 +16,6 @@ export const ArticlePage = () => {
             image="https://spacenews.com/wp-content/uploads/2023/01/aschbacher-davos.jpg"
             component="img"
           />
-          <Box>{id}</Box>
 
           <Box sx={{ position: 'relative' }}>
             <Box

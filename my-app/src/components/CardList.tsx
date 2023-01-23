@@ -5,11 +5,12 @@ import { CardInfoTypes } from 'types/types';
 import { useAppDispatch, useAppSelector } from 'app/hooks';
 import React, { useEffect } from 'react';
 import { getCardsInfo } from 'store/cardsSlice';
+import { NavLink } from 'react-router-dom';
+import { locations } from 'constants/locations';
 
 export const CardList = () => {
   const querryCard = useCardInfo();
   const querryCardInfo = querryCard.data;
-  console.log(querryCardInfo);
 
   const { cards } = useAppSelector((state) => state.cards);
   const dispatch = useAppDispatch();
@@ -23,12 +24,14 @@ export const CardList = () => {
   return (
     <Grid container spacing={4}>
       {cards?.map((item: CardInfoTypes) => (
-        <CardItem
-          key={item.id}
-          title={item.title}
-          imgSource={item.imageUrl}
-          description={item.summary}
-        />
+        <NavLink to={`/articlepage/${item.id}`} key={item.id}>
+          <CardItem
+            key={item.id}
+            title={item.title}
+            imgSource={item.imageUrl}
+            description={item.summary}
+          />
+        </NavLink>
       ))}
     </Grid>
   );
