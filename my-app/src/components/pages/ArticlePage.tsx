@@ -17,7 +17,7 @@ export const ArticlePage = () => {
             component="img"
           />
 
-          <Box>
+          <Box sx={{ position: 'relative' }}>
             <Box
               sx={{
                 width: '1140px',
@@ -62,7 +62,7 @@ export const ArticlePage = () => {
               </Typography>
             </Box>
 
-            <CardActions sx={{ position: 'absolute', bottom: 0, left: 0 }}>
+            <CardActions sx={{ position: 'absolute', bottom: '35px', left: '150px', p: 0 }}>
               <Box
                 sx={{
                   display: 'flex',
