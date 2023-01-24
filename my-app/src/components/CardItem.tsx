@@ -4,6 +4,7 @@ import CalendarTodayOutlinedIcon from '@mui/icons-material/CalendarTodayOutlined
 import { useCardInfo } from 'hooks/queries/useCardInfo';
 import { NavLink } from 'react-router-dom';
 import { locations } from 'constants/locations';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 interface CardItemProps {
   title: string;
@@ -33,11 +34,20 @@ export const CardItem: React.FC<CardItemProps> = ({ title, imgSource, descriptio
             {description.length <= 100 ? description : description.substr(0, 100) + '...'}
           </Typography>
           <CardActions>
-            <Button
-              size="small"
-              sx={{ fontWeight: '700px', color: '#363636', textTransform: 'none' }}>
-              Read more
-            </Button>
+            <Box
+              sx={{
+                display: 'flex',
+                flexDirection: 'row',
+                justifyContent: 'left',
+                alignItems: 'baseline'
+              }}>
+              <Button
+                size="small"
+                sx={{ fontWeight: '700px', color: '#363636', textTransform: 'none' }}>
+                Read more
+              </Button>
+              <ArrowForwardIcon sx={{ width: '12px', height: '10px' }} />
+            </Box>
           </CardActions>
         </CardContent>
       </Card>
