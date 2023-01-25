@@ -1,5 +1,3 @@
-// @ts-nocheck
-
 import { Box, Button, Card, CardActions, CardContent, CardMedia, Typography } from '@mui/material';
 import { StyledContainer } from 'components/common/Container/StyledContainer';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
@@ -9,18 +7,16 @@ import { useEffect, useState } from 'react';
 import { CardInfoTypes } from 'types/types';
 import { locations } from 'constants/locations';
 
-interface CardItemProps {
+type Article = {
   title: string;
-  imgSource: string;
-  description: string;
-  id: string;
-  key: string;
-}
+  summary: string;
+  imageUrl: string;
+};
 
-export const ArticlePage: React.FC<CardItemProps> = () => {
+export const ArticlePage: React.FC = () => {
   const { cards } = useAppSelector((state) => state.cards);
   const { id } = useParams();
-  const [article, setArticle] = useState(null);
+  const [article, setArticle] = useState<Article | null>(null);
 
   useEffect(() => {
     fetch(`https://api.spaceflightnewsapi.net/v3/articles/${id}`)
@@ -77,7 +73,7 @@ export const ArticlePage: React.FC<CardItemProps> = () => {
                     alignItems: 'baseline'
                   }}>
                   <ArrowBackIcon sx={{ width: '12px', height: '10px' }} />
-                  <NavLink to={locations.homepage.path}>
+                  <NavLink to={locations.homepage.path} className="back-to-homepage-button-link">
                     <Button
                       size="small"
                       sx={{

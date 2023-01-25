@@ -5,5 +5,6 @@ export interface CardInfoTypes {
   description: string;
   summary: string;
   imageUrl: string;
+  publishedAt: string;
   id: string;
 }

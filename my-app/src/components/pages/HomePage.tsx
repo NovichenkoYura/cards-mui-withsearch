@@ -6,6 +6,15 @@ import { useAppSelector } from 'app/hooks';
 
 export const HomePage = () => {
   const { cards } = useAppSelector((state) => state.cards);
+  const { search } = useAppSelector((state) => state.search);
+
+  const filteredCards = cards?.filter((card) => {
+    return (
+      card.title.toLowerCase().includes(search.toLowerCase()) ||
+      card.summary.toLowerCase().includes(search.toLowerCase())
+    );
+  });
+
   return (
     <>
       <StyledContainer>
@@ -20,7 +29,7 @@ export const HomePage = () => {
             mb: '45px'
           }}>
           <Box component={'span'} sx={{ color: '#363636' }}>
-            Results: {cards && cards.length}
+            Results: {filteredCards && filteredCards.length}
           </Box>
           <Divider orientation="horizontal" />
         </Box>

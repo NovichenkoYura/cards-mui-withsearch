@@ -1,0 +1,41 @@
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+* {
+  font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
+}
+
+.card-button-link {
+  text-decoration: none;
+}
+
+.back-to-homepage-button-link {
+  text-decoration: none;
+}
+
+.highlight {
+  background: rgba(255, 246, 25, 0.63);
+  font-family: "Roboto","Helvetica","Arial",sans-serif;
+  font-weight: 400;
+  letter-spacing: 0em;
+}
+
+.search-label {
+  font-family: 'Montserrat' !important;
+  font-style: normal !important;
+  font-weight: 600 !important;
+  font-size: 16px !important;
+  line-height: 20px !important;
+  color: #363636 !important;
+  margin-bottom: 10px !important;
+}

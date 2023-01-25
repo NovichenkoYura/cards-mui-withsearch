@@ -1,56 +1,35 @@
 import { SearchOutlined } from '@mui/icons-material';
-import { IconButton, TextField } from '@mui/material';
-import { CustomTypograthy } from './labelStyle';
-import { StyledSearchedField } from './StyledSearchField';
+import { Box, IconButton, Input, Typography } from '@mui/material';
+import { useAppDispatch } from 'app/hooks';
+import { setSearchValue } from '../../store/searhSlice';
 
 export const SearchField = () => {
+  const dispatch = useAppDispatch();
+
   return (
-    <StyledSearchedField
-      onChange={(e: any) => {
-        console.log(e.target.value);
-      }}
-      fullWidth
-      id="seacrh"
-      variant="standard"
-      // label="Filter by keywords"
-      label={<CustomTypograthy> Filter by keywords</CustomTypograthy>}
-      // defaultValue={<CustomTypograthy>The most successful IT companies in 2020</CustomTypograthy>}
-      // defaultValue="The most successful IT companies in 2020"
-      InputProps={{
-        startAdornment: (
+    <Box sx={{ marginTop: '50px' }}>
+      <Typography className="search-label">Filter by keywords</Typography>
+      <Input
+        sx={{
+          marginTop: '0px',
+          width: '600px',
+          height: '50px',
+          backgroundColor: '#fff',
+          borderRadius: '5px',
+          border: '1px solid #EAEAEA',
+          boxShadow: '0px 8px 24px rgba(0, 0, 0, 0.05)'
+        }}
+        disableUnderline
+        fullWidth
+        startAdornment={
           <IconButton>
             <SearchOutlined />
           </IconButton>
-        )
-      }}
-      // sx={{ mt: '50px', width: '600px', height: '50px', borderRadius: '5px' }}
-    />
+        }
+        onChange={(e: any) => {
+          dispatch(setSearchValue(e.target.value));
+        }}
+      />
+    </Box>
   );
 };
-
-// <TextField
-// fullWidth
-// id="standard-bare"
-// variant="outlined"
-// defaultValue="How can we help"
-// InputProps={{
-//   endAdornment: (
-//     <IconButton>
-//       <SearchOutlined />
-//     </IconButton>
-//   ),
-// }}
-// />
-
-// <TextField
-//   label="With normal TextField"
-//   InputProps={{
-//     endAdornment: (
-//       <InputAdornment>
-//         <IconButton>
-//           <SearchIcon />
-//         </IconButton>
-//       </InputAdornment>
-//     )
-//   }}
-// />;

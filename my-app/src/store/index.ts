@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import cardsReducer from './cardsSlice';
+import searchReducer from './searhSlice';
 
 const store = configureStore({
   reducer: {
-    cards: cardsReducer
+    cards: cardsReducer,
+    search: searchReducer
   }
 });
 
