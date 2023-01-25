@@ -3,9 +3,7 @@ import { Box, Container } from '@mui/material';
 
 export const StyledContainer = styled(Box)`
   text-align: left;
-  width: 1290px;
+  width: 1440px;
   padding-left: 75px;
   padding-right: 75px;
 `;
-
-// border: solid 1px;
