@@ -7,7 +7,7 @@ import React, { useEffect } from 'react';
 import { getCardsInfo } from 'store/cardsSlice';
 
 export const CardList = () => {
-  const querryCard = useCardInfo();
+  const querryCard = useCardInfo(); //an example of a custom hook (condition of the task)
   const querryCardInfo = querryCard.data;
 
   const { cards } = useAppSelector((state) => state.cards);
@@ -37,10 +37,8 @@ export const CardList = () => {
       return 0;
     });
 
-  // For codereviewer: I use store  for satisfying the conditions of the task (use state management). Without it I would prefer to use React Querry
-
   useEffect(() => {
-    dispatch(getCardsInfo(querryCardInfo));
+    dispatch(getCardsInfo(querryCardInfo)); //an example of the state management's using (condition of the task)
   }, [querryCardInfo]);
 
   return (
