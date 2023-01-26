@@ -6,6 +6,7 @@ import { NavLink, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { CardInfoTypes } from 'types/types';
 import { locations } from 'constants/locations';
+import { CustomTypograthy } from 'components/common/StyledTypography';
 
 type Article = {
   title: string;
@@ -59,7 +60,7 @@ export const ArticlePage: React.FC = () => {
                   sx={{ fontSize: '24px', textAlign: 'center', mb: '50px' }}>
                   {article.title}
                 </Typography>
-                <Typography variant="body2" color="text.secondary" sx={{ fontSize: '16px' }}>
+                <Typography variant="body2" color="text.secondary" sx={{ fontSize: '18px' }}>
                   {article.summary}
                 </Typography>
               </Box>
@@ -81,7 +82,9 @@ export const ArticlePage: React.FC = () => {
                         color: '#363636',
                         textTransform: 'none'
                       }}>
-                      Back to homepage
+                      <CustomTypograthy sx={{ fontWeight: '700' }}>
+                        Back to homepage
+                      </CustomTypograthy>
                     </Button>
                   </NavLink>
                 </Box>

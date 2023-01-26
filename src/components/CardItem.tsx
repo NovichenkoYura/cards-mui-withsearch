@@ -5,6 +5,7 @@ import { NavLink } from 'react-router-dom';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import moment from 'moment';
 import { useAppSelector } from 'app/hooks';
+import { CustomTypograthy } from './common/StyledTypography';
 
 interface CardItemProps {
   title: string;
@@ -63,13 +64,14 @@ export const CardItem: React.FC<CardItemProps> = ({ title, imgSource, descriptio
                 display: 'flex',
                 flexDirection: 'row',
                 justifyContent: 'left',
-                alignItems: 'baseline'
+                alignItems: 'baseline',
+                mt: 'auto'
               }}>
               <NavLink to={`/articlepage/${id}`} className="card-button-link">
                 <Button
                   size="small"
                   sx={{ fontWeight: '700px', color: '#363636', textTransform: 'none' }}>
-                  Read more
+                  <CustomTypograthy sx={{ fontWeight: '700' }}>Read more</CustomTypograthy>
                 </Button>
               </NavLink>
               <ArrowForwardIcon sx={{ width: '12px', height: '10px' }} />
