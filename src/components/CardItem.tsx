@@ -26,7 +26,12 @@ export const CardItem: React.FC<CardItemProps> = ({ title, imgSource, descriptio
 
   return (
     <Grid item={true}>
-      <Card sx={{ width: 400, height: 530, boxShadow: '0px 8px 24px rgba(0, 0, 0, 0.05)' }}>
+      <Card
+        sx={{
+          width: 400,
+          height: '540px',
+          boxShadow: '0px 8px 24px rgba(0, 0, 0, 0.05)'
+        }}>
         <CardMedia sx={{ height: 217 }} image={imgSource} title="green iguana" component="img" />
 
         <CardContent sx={{ p: '25px' }}>
@@ -58,19 +63,23 @@ export const CardItem: React.FC<CardItemProps> = ({ title, imgSource, descriptio
                 description.length <= 100 ? description : description.substr(0, 100) + '...'
               )
             }}></Typography>
-          <CardActions>
+          <CardActions sx={{ p: 0, mt: '10px' }}>
             <Box
               sx={{
                 display: 'flex',
                 flexDirection: 'row',
                 justifyContent: 'left',
-                alignItems: 'baseline',
-                mt: 'auto'
+                alignItems: 'baseline'
               }}>
               <NavLink to={`/articlepage/${id}`} className="card-button-link">
                 <Button
                   size="small"
-                  sx={{ fontWeight: '700px', color: '#363636', textTransform: 'none' }}>
+                  sx={{
+                    fontWeight: '700px',
+                    color: '#363636',
+                    textTransform: 'none',
+                    p: 0
+                  }}>
                   <CustomTypograthy sx={{ fontWeight: '700' }}>Read more</CustomTypograthy>
                 </Button>
               </NavLink>
