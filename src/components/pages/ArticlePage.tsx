@@ -31,26 +31,31 @@ export const ArticlePage: React.FC = () => {
         {article && (
           <Card
             sx={{
-              width: '1440px'
+              width: '1440px',
+              display: 'flex',
+              justifyContent: 'center',
+              position: 'relative',
+              overflow: 'visible',
+              boxShadow: 'none !important'
             }}>
-            <CardMedia sx={{ height: 217 }} image={article.imageUrl} component="img" />
+            <CardMedia
+              sx={{ height: 217, position: 'absolute', top: 0, width: '100%' }}
+              image={article.imageUrl}
+              component="img"
+            />
 
-            <Box sx={{ position: 'relative' }}>
+            <Box sx={{ width: '1290px', zIndex: 10, position: 'relative', top: 150 }}>
               <Box
                 sx={{
-                  width: '1140px',
+                  width: '1290px',
                   border: '1px solid #EAEAEA',
                   borderRadius: '5px',
                   boxShadow: '0px 8px 24px rgba(0, 0, 0, 0.05)',
-                  zIndex: 1,
                   pl: '75px',
                   pr: '75px',
                   pt: '35px',
                   pb: '50px',
-                  ml: '75px',
-                  position: 'relative',
-                  top: '-95px',
-                  right: 0,
+                  // ml: '75px',
                   backgroundColor: '#FFFFFF'
                 }}>
                 <Typography
@@ -65,7 +70,7 @@ export const ArticlePage: React.FC = () => {
                 </Typography>
               </Box>
 
-              <CardActions sx={{ position: 'absolute', bottom: '35px', left: '150px', p: 0 }}>
+              <CardActions sx={{ position: 'absolute', bottom: -55, p: 0 }}>
                 <Box
                   sx={{
                     display: 'flex',

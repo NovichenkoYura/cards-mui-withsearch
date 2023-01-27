@@ -30,11 +30,13 @@ export const CardItem: React.FC<CardItemProps> = ({ title, imgSource, descriptio
         sx={{
           width: 400,
           height: '540px',
-          boxShadow: '0px 8px 24px rgba(0, 0, 0, 0.05)'
+          boxShadow: '0px 8px 24px rgba(0, 0, 0, 0.05)',
+          display: 'flex',
+          flexDirection: 'column'
         }}>
         <CardMedia sx={{ height: 217 }} image={imgSource} title="green iguana" component="img" />
 
-        <CardContent sx={{ p: '25px' }}>
+        <CardContent sx={{ p: '25px', flex: 1, display: 'flex', flexDirection: 'column' }}>
           <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
             <CalendarTodayOutlinedIcon sx={{ width: '13.33px', color: '#363636', mb: '20px' }} />
             <Box
@@ -63,7 +65,7 @@ export const CardItem: React.FC<CardItemProps> = ({ title, imgSource, descriptio
                 description.length <= 100 ? description : description.substr(0, 100) + '...'
               )
             }}></Typography>
-          <CardActions sx={{ p: 0, mt: '10px' }}>
+          <CardActions sx={{ p: 0, mt: '10px', flex: 1 }}>
             <Box
               sx={{
                 display: 'flex',
