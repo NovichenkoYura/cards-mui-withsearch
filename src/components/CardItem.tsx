@@ -29,7 +29,7 @@ export const CardItem: React.FC<CardItemProps> = ({ title, imgSource, descriptio
       <Card
         sx={{
           width: 400,
-          height: '540px',
+          height: '560px',
           boxShadow: '0px 8px 24px rgba(0, 0, 0, 0.05)',
           display: 'flex',
           flexDirection: 'column'
@@ -65,7 +65,16 @@ export const CardItem: React.FC<CardItemProps> = ({ title, imgSource, descriptio
                 description.length <= 100 ? description : description.substr(0, 100) + '...'
               )
             }}></Typography>
-          <CardActions sx={{ p: 0, mt: '10px', flex: 1 }}>
+          <CardActions
+            sx={{
+              p: 0,
+              flex: 1,
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'flex-end',
+              alignItems: 'flex-start',
+              mt: '10px'
+            }}>
             <Box
               sx={{
                 display: 'flex',
